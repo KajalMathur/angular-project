@@ -1,0 +1,14 @@
+.containers_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 10%;
+}
+
+.product_info {
+    width: 50%;
+}
+
+.seller_info {
+    width: 30%;
+}

@@ -1,0 +1,27 @@
+.product_name {
+    font-size: xxx-large;
+    font-family: initial;
+    height: 60px;
+    flex-grow: 9;
+}
+
+.product_description {
+    padding-top: 25px;
+    width: 70%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.containers_row {
+    display: flex;
+    flex-direction: row;
+}
+
+.mat-success {
+    background-color: green;
+    color: #fff;
+    width: 100px;
+}

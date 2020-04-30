@@ -1,0 +1,36 @@
+<div class="carousel">
+  <mat-card class="carousel_matCard">
+    <owl-carousel [carouselClasses]="['owl-theme', 'sliding']" [options]="mySlideOptions">
+      <div *ngFor="let image of mySlideImages" class="carousel">
+        <div>
+          <img src="assets\image\{{image}}"/>
+        </div>
+      </div>
+    </owl-carousel>
+  </mat-card>
+</div>
+<br>
+<div *ngFor="let product of products" class="product-list">
+  <mat-card (click)="onCardClick(product.id)" matRipple>
+    <mat-card-content>
+      <div class="container">
+        <div class="image-flex">
+          <img class="product-image" src="assets\image\{{product.image}}">
+        </div>
+        <div class="flex-column" style="flex-grow: 6">
+          <div>
+            <h1><b>{{product.name}}</b></h1>
+          </div>
+          <div>
+            <p> {{product.description}} </p>
+          </div>
+          <div><b>Reviews: </b>{{product.reviews}}</div>
+          <div><b>Rating: </b> {{product.rating}}</div>
+        </div>
+        <div style="flex-grow: 1">
+          <B>Price: </B>{{product.price}} {{product.unit}}
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
