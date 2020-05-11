@@ -13,7 +13,7 @@ export class AppComponent {
 
   constructor(private router: Router) { }
 
-  public login() {
+  public navigateToLogin() {
     this.router.navigate(['/login'])
   }
 }

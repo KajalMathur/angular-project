@@ -10,12 +10,12 @@ export class ProductService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public getAllProducts() {
+  public async getAllProducts() {
     console.log(this.url)
-    return this.httpClient.get(this.url);
+    return await this.httpClient.get(`${this.url}`).toPromise();
   }
 
-  public getProductById(userId: string, sellerDetail: boolean = false) {
-    return this.httpClient.get(this.url + "/" + userId + "?" + "sellerDetail=" + sellerDetail);
+  public async getProductById(userId: string, sellerDetail: boolean = false) {
+    return await this.httpClient.get('${this.url}/${userId}?sellerDetail=${sellerDetail}').toPromise();
   }
 }

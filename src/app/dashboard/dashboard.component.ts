@@ -24,7 +24,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.productService.getAllProducts().subscribe((data: Product[]) => {
+    this.productService.getAllProducts().then((data: Product[]) => {
       this.products = data;
     }, (error: any) => {
       console.log("Error = " + error['status']);

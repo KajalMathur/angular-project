@@ -11,7 +11,7 @@ export class UserService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public createUser(firstName: String, lastName: String, userName: String, password: string, address: Address) {
+  public async createUser(firstName: String, lastName: String, userName: String, password: string, address: Address) {
     const body = {
       'firstName': userName,
       'lastName': lastName,
@@ -20,6 +20,8 @@ export class UserService {
       'address': address
     };
 
-    return this.httpClient.post(this.url,body);
+    return await this.httpClient.post('${this.url}', body).toPromise();
   }
 }
+
+

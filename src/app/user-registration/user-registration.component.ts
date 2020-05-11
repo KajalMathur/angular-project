@@ -12,7 +12,6 @@ export class UserRegistrationComponent implements OnInit {
 
   signUpForm: FormGroup;
 
-
   constructor(private userService: UserService, private formBuilder: FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
@@ -38,10 +37,10 @@ export class UserRegistrationComponent implements OnInit {
       return;
     this.userService.createUser(this.signUpForm.value.firstName, this.signUpForm.value.lastName
       , this.signUpForm.value.userName, this.signUpForm.value.password, this.signUpForm.value.address)
-      .subscribe((data) => {
+      .then((data) => {
         this.router.navigate(['/dashboard']);
       }, (error) => {
-        console.log("error = " + error.status);
+        console.error("error = " + error.status);
       });
   }
 }

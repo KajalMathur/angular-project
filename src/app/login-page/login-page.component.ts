@@ -26,12 +26,11 @@ export class LoginPageComponent implements OnInit {
     if (!this.loginForm.valid)
       return;
     this.authService.authenticateUser(this.loginForm.value.userName, this.loginForm.value.password)
-      .subscribe((data) => {
+      .then((data) => {
         this.router.navigate(['/dashboard'])
       }, error => {
-        console.log("error = " + error.status);
+        console.error("error = " + error.status);
         this.error_status = true;
-        console.log("error = " + this.error_status);
       });
   }
 

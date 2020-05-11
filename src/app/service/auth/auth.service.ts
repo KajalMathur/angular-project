@@ -9,7 +9,7 @@ export class AuthService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public authenticateUser(userName: string, password: string) {
+  public async authenticateUser(userName: string, password: string) {
     const body = {
       'userName': userName,
       'password': password

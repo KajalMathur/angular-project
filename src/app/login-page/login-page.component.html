@@ -9,12 +9,18 @@
           <mat-form-field appearance="fill">
             <mat-label>Username</mat-label>
             <input formControlName="userName" matInput>
+            <mat-error *ngIf="loginForm.controls.userName.touched && loginForm.controls.userName.invalid">
+              This field is mandatory.
+            </mat-error>
           </mat-form-field>
         </div>
         <div>
-          <mat-form-field appearance="fill">
+          <mat-form-field appearance="fill" style="padding: 10px;">
             <mat-label>Password</mat-label>
             <input formControlName="password" matInput type="password">
+            <mat-error *ngIf="loginForm.controls.password.touched && loginForm.controls.password.invalid">
+              This field is mandatory.
+            </mat-error>
           </mat-form-field>
         </div>
         <div *ngIf="error_status" [style.color]="'red'"><b>Please provide valid credentials.
