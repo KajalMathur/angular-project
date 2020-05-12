@@ -1,0 +1,102 @@
+<div class="mat_container">
+  <mat-card class="matcard_size">
+
+    <form (submit)="saveUser()" [formGroup]="signUpForm" class="height">
+      <div class="container">
+        <h1><b> New User Registration </b><br><br></h1>
+        <mat-form-field appearance="fill">
+          <mat-label> First Name</mat-label>
+          <input formControlName="firstName" matInput>
+          <mat-error *ngIf="signUpForm.controls.firstName.touched && signUpForm.controls.firstName.invalid">
+            This field is mandatory.
+          </mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field appearance="fill">
+          <mat-label> Last Name</mat-label>
+          <input formControlName="lastName" matInput type="text">
+          <mat-error *ngIf="signUpForm.controls.lastName.touched && signUpForm.controls.lastName.invalid">
+            This field is mandatory.
+          </mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field appearance="fill">
+          <mat-label> User Name</mat-label>
+          <input formControlName="userName" matInput type="text">
+          <mat-error *ngIf="signUpForm.controls.userName.touched && signUpForm.controls.userName.invalid">
+            This field is mandatory.
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label> Password</mat-label>
+          <input formControlName="password" matInput type="password">
+          <mat-error *ngIf="signUpForm.controls.password.touched && signUpForm.controls.password.invalid">
+            This field is mandatory.
+          </mat-error>
+        </mat-form-field>
+
+        <div class="container label" formGroupName="address">
+          <b class="address_font">ADDRESS</b>
+          <br>
+          <div>
+            <mat-form-field appearance="fill">
+              <mat-label> House Number</mat-label>
+              <input formControlName="houseNumber" matInput type="text">
+            </mat-form-field>
+          </div>
+          <br>
+          <div>
+            <mat-form-field appearance="fill">
+              <mat-label> Street Name</mat-label>
+              <input formControlName="streetName" matInput type="text">
+            </mat-form-field>
+          </div>
+          <br>
+          <div>
+            <mat-form-field appearance="fill">
+              <mat-label> Street Number</mat-label>
+              <input formControlName="streetNo" matInput type="text">
+            </mat-form-field>
+          </div>
+          <br>
+          <div>
+            <mat-form-field appearance="fill">
+              <mat-label> City</mat-label>
+              <input formControlName="city" matInput type="text">
+            </mat-form-field>
+          </div>
+          <br>
+          <div>
+            <mat-form-field appearance="fill">
+              <mat-label> State</mat-label>
+              <input formControlName="state" matInput type="text">
+            </mat-form-field>
+          </div>
+          <br>
+          <div>
+            <mat-form-field appearance="fill">
+              <mat-label> Country</mat-label>
+              <input formControlName="country" matInput type="text">
+            </mat-form-field>
+          </div>
+          <br>
+          <div>
+            <mat-form-field appearance="fill">
+              <mat-label> Zip Code</mat-label>
+              <input formControlName="pincode" matInput type="text">
+            </mat-form-field>
+
+          </div>
+          <br>
+          <div>
+            <button [disabled]="!signUpForm.valid" color="primary" mat-flat-button type="submit">Submit</button>
+          </div>
+        </div>
+
+      </div>
+    </form>
+  </mat-card>
+</div>

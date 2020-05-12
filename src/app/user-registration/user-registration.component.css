@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.mat_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.matcard_size {
+    width: 50%;
+}
+
+.address_font {
+    font-family: unset;
+    font-size: large;
+}
+
+mat-form-field {
+    width: 40%;
+    min-width: 400px;
+}
