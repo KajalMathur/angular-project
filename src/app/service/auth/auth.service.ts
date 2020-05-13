@@ -15,6 +15,6 @@ export class AuthService {
       'password': password
     };
 
-    return this.httpClient.post('http://localhost:8080/v1/authenticate', body);
+    return await this.httpClient.post('http://localhost:8095/v1/authenticate', body).toPromise();
   }
 }

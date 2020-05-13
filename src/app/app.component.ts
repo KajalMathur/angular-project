@@ -14,6 +14,7 @@ export class AppComponent {
   constructor(private router: Router) { }
 
   public navigateToLogin() {
+    sessionStorage.clear();
     this.router.navigate(['/login'])
   }
 }

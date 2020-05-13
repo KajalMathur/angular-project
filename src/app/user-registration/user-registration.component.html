@@ -38,59 +38,39 @@
           </mat-error>
         </mat-form-field>
 
-        <div class="container label" formGroupName="address">
+        <div class="container label addressGroup" formGroupName="address">
           <b class="address_font">ADDRESS</b>
           <br>
-          <div>
-            <mat-form-field appearance="fill">
-              <mat-label> House Number</mat-label>
+          <div class="house_row_1">
+            <mat-form-field appearance="fill" style="width: 15%">
+              <mat-label> House No.</mat-label>
               <input formControlName="houseNumber" matInput type="text">
             </mat-form-field>
-          </div>
-          <br>
-          <div>
-            <mat-form-field appearance="fill">
+
+            <mat-form-field appearance="fill" style="width:15%">
+              <mat-label> Street No.</mat-label>
+              <input formControlName="streetNo" matInput type="text">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" style="width: 60%">
               <mat-label> Street Name</mat-label>
               <input formControlName="streetName" matInput type="text">
             </mat-form-field>
           </div>
-          <br>
-          <div>
-            <mat-form-field appearance="fill">
-              <mat-label> Street Number</mat-label>
-              <input formControlName="streetNo" matInput type="text">
-            </mat-form-field>
-          </div>
-          <br>
-          <div>
-            <mat-form-field appearance="fill">
+          <div class="house_row_1">
+            <mat-form-field appearance="fill" style="width: 30%">
               <mat-label> City</mat-label>
               <input formControlName="city" matInput type="text">
             </mat-form-field>
-          </div>
-          <br>
-          <div>
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="fill" style="width: 30%">
               <mat-label> State</mat-label>
               <input formControlName="state" matInput type="text">
             </mat-form-field>
-          </div>
-          <br>
-          <div>
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="fill" style="width: 30%">
               <mat-label> Country</mat-label>
               <input formControlName="country" matInput type="text">
             </mat-form-field>
           </div>
-          <br>
-          <div>
-            <mat-form-field appearance="fill">
-              <mat-label> Zip Code</mat-label>
-              <input formControlName="pincode" matInput type="text">
-            </mat-form-field>
-
-          </div>
-          <br>
           <div>
             <button [disabled]="!signUpForm.valid" color="primary" mat-flat-button type="submit">Submit</button>
           </div>

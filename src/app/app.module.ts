@@ -19,6 +19,7 @@ import { OwlModule } from 'ngx-owl-carousel';
 import { ProductComponent } from './product/product.component';
 import { ProductInfoComponent } from './product-info/product-info.component';
 import { SellerInfoComponent } from './seller-info/seller-info.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { SellerInfoComponent } from './seller-info/seller-info.component';
     HttpClientModule,
     MatToolbarModule,
     ReactiveFormsModule,
-    OwlModule  ],
+    OwlModule,
+    MatProgressSpinnerModule],
   providers: [],
   bootstrap: [AppComponent]
 })

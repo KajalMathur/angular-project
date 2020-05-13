@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Address } from 'src/app/model/Address';
 
 @Injectable({
@@ -7,7 +7,7 @@ import { Address } from 'src/app/model/Address';
 })
 export class UserService {
   
-  url = "http://localhost:9098/v1/user";
+  url = "http://localhost:8095/v1/user";
 
   constructor(private httpClient: HttpClient) { }
 
@@ -20,7 +20,7 @@ export class UserService {
       'address': address
     };
 
-    return await this.httpClient.post('${this.url}', body).toPromise();
+    return await this.httpClient.post(`${this.url}`, body).toPromise();
   }
 }
 

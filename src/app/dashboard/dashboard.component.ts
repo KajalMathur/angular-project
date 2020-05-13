@@ -34,6 +34,5 @@ export class DashboardComponent implements OnInit {
   public onCardClick(id: any) {
     console.log("Product Response after click event1 = " + JSON.stringify(id));
     this.router.navigate([`/product/${id}`]);
-
   }
 }
