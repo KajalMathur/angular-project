@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/service/auth/auth.service';
+import  { LoginPageService } from 'src/app/service/angular-service/LoginPage.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -13,7 +14,7 @@ export class LoginPageComponent implements OnInit {
   loginForm: FormGroup;
   error_status: boolean;
 
-  constructor(private authService: AuthService, private formBuilder: FormBuilder, private router: Router) { }
+  constructor(private authService: AuthService, private formBuilder: FormBuilder, private router: Router, private loginPageService: LoginPageService) { }
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -27,9 +28,11 @@ export class LoginPageComponent implements OnInit {
       return;
     this.authService.authenticateUser(this.loginForm.value.userName, this.loginForm.value.password)
       .then((data) => {
+        console.log("Response from authentication API = " + data['jwtResponse']);
+        this.loginPageService.setToken(data['jwtResponse']);
         this.router.navigate(['/dashboard'])
       }, error => {
-        console.error("error = " + error.status);
+        console.error("error = " + error['status']);
         this.error_status = true;
       });
   }

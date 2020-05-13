@@ -13,6 +13,11 @@
     height: 100%;
 }
 
+.house_row_1 {
+    display: flex;
+    justify-content: space-between;
+}
+
 .matcard_size {
     width: 50%;
 }
@@ -22,7 +27,11 @@
     font-size: large;
 }
 
+.addressGroup {
+    width: 100%;
+}
+
 mat-form-field {
-    width: 40%;
-    min-width: 400px;
+    width: 50%;
+    min-width: 50px;
 }

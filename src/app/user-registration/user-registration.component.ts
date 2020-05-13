@@ -38,9 +38,10 @@ export class UserRegistrationComponent implements OnInit {
     this.userService.createUser(this.signUpForm.value.firstName, this.signUpForm.value.lastName
       , this.signUpForm.value.userName, this.signUpForm.value.password, this.signUpForm.value.address)
       .then((data) => {
+        console.log("Response from user Registration : " + JSON.stringify(data))
         this.router.navigate(['/dashboard']);
       }, (error) => {
-        console.error("error = " + error.status);
+        console.error("error = " + JSON.stringify(error));
       });
   }
 }
