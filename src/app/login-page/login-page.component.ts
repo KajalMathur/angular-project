@@ -13,6 +13,7 @@ export class LoginPageComponent implements OnInit {
 
   loginForm: FormGroup;
   error_status: boolean;
+  
 
   constructor(private authService: AuthService, private formBuilder: FormBuilder, private router: Router, private loginPageService: LoginPageService) { }
 
@@ -28,8 +29,8 @@ export class LoginPageComponent implements OnInit {
       return;
     this.authService.authenticateUser(this.loginForm.value.userName, this.loginForm.value.password)
       .then((data) => {
-        console.log("Response from authentication API = " + data['jwtResponse']);
-        this.loginPageService.setToken(data['jwtResponse']);
+        console.log("Response from authentication API = " + JSON.stringify(data));
+        this.loginPageService.setToken(data['jwtResponse'], data['loggedInUserId'], this.loginForm.value.userName);
         this.router.navigate(['/dashboard'])
       }, error => {
         console.error("error = " + error['status']);

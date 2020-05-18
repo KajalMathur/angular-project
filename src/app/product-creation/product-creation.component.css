@@ -1,0 +1,41 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.outer-product-creation {
+    padding: 10%;
+}
+
+.product-creation-form {
+    height: 100%;
+}
+
+.price-unit-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 30%;
+}
+
+.price-product-creation {
+    width: 30%;
+    min-width: 150px;
+}
+
+.unit-product-creation {
+    width: 15%;
+    padding-left: 5%;
+    min-width: 150px;
+}
+
+mat-checkbox {
+    padding: 10px;
+}
+
+mat-form-field {
+    width: 30%;
+    min-width: 200px;
+}

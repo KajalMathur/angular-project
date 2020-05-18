@@ -20,6 +20,10 @@ import { ProductComponent } from './product/product.component';
 import { ProductInfoComponent } from './product-info/product-info.component';
 import { SellerInfoComponent } from './seller-info/seller-info.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { ProductCreationComponent } from './product-creation/product-creation.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatSelectModule} from '@angular/material/select';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,7 +33,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     UserRegistrationComponent,
     ProductComponent,
     ProductInfoComponent,
-    SellerInfoComponent
+    SellerInfoComponent,
+    ProductCreationComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +49,10 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MatToolbarModule,
     ReactiveFormsModule,
     OwlModule,
-    MatProgressSpinnerModule],
+    MatProgressSpinnerModule,
+    MatCheckboxModule,
+    FormsModule,
+    MatSelectModule],
   providers: [],
   bootstrap: [AppComponent]
 })
