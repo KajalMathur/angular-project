@@ -17,4 +17,8 @@ export class AppComponent {
     sessionStorage.clear();
     this.router.navigate(['/login'])
   }
+
+  public navigateToProductCreation() {
+    this.router.navigate(['/product-creation'])
+  }
 }

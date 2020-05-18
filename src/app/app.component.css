@@ -13,6 +13,11 @@
 }
 
 .logout_container {
-    padding-left: 80%;
+    padding-left: 20%;
     width: 20px;
+}
+
+.addProduct_container {
+    padding-left: 58%;
+    width: 6px;
 }

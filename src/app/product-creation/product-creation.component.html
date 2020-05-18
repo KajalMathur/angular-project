@@ -1,0 +1,55 @@
+<div class="outer-product-creation">
+    <mat-card>
+        <form class="product-creation-form" (submit)="createProduct()" [formGroup]="addProductForm">
+            <div class="container">
+                <h1><b> Add New Product </b><br><br></h1>
+                <mat-form-field appearance="fill">
+                    <mat-label> Product Name</mat-label>
+                    <input formControlName="name" matInput type="text">
+                    <mat-error *ngIf="addProductForm.controls.name.touched && addProductForm.controls.name.invalid">
+                        This field is mandatory.
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Image</mat-label>
+                    <input formControlName="image" matInput type="text">
+                    <mat-error *ngIf="addProductForm.controls.image.touched && addProductForm.controls.image.invalid">
+                        This field is mandatory.
+                    </mat-error>
+                </mat-form-field>
+                <div class="price-unit-container">
+                    <mat-form-field appearance="fill" class="price-product-creation">
+                        <mat-label>Price</mat-label>
+                        <input formControlName="price" matInput type="text">
+                        <mat-error *ngIf="addProductForm.controls.price.touched && addProductForm.controls.price.invalid">
+                            This field is mandatory.
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill" class="unit-product-creation">
+                        <mat-select formControlName="unit" placeholder="Unit" [(ngModel)]="selectedValue" name="unit">
+                            <mat-option *ngFor="let Currencyunit of unit" [value]="Currencyunit.value">
+                                {{Currencyunit.display}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <mat-form-field appearance="fill">
+                    <textarea formControlName="description" matInput placeholder="description"></textarea>
+                    <mat-error *ngIf="addProductForm.controls.description.touched && addProductForm.controls.description.invalid">
+                        This field is mandatory.
+                    </mat-error>
+                </mat-form-field>
+                <div>
+                    <mat-label><b>PaymentMode</b></mat-label><br>
+                    <mat-checkbox formControlName="paymentmode" [(ngModel)]="COD">Cash On Delivery</mat-checkbox>
+                    <mat-checkbox formControlName="paymentmode" [(ngModel)]="CREDIT">Credit</mat-checkbox>
+                    <mat-checkbox formControlName="paymentmode" [(ngModel)]="DEBIT">Debit</mat-checkbox>
+                    <mat-checkbox formControlName="paymentmode" [(ngModel)]="PAYTM">Paytm</mat-checkbox>
+                </div>
+                <div style="padding-top: 20px;">
+                    <button [disabled]="!addProductForm.valid" color="primary" mat-flat-button type="submit">Submit</button>
+                </div>
+            </div>
+        </form>
+    </mat-card>
+</div>
